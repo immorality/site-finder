@@ -1,0 +1,18 @@
+
+<body bgcolor="#add8e6">
+<div>
+        <strong><a href="/finder" style="text-decoration: none; color:black" >Home</a></strong><br />
+
+     </div><br />
+<h1>List of matches: </h1>
+    <div style="margin-left:30px">
+        <ol type="1">
+        {% for match in matches %}
+            <li>
+                {% for site in match.matching.all %}{{ site }}<br />{% endfor %}
+                <br/>{% for tag in match.tags.all %}{{ tag }}<br />{% endfor %}
+            </li>
+        {% endfor %}
+        </ol>
+    </div>
+</body>

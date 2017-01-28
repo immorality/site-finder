@@ -1,0 +1,24 @@
+
+<body bgcolor="#add8e6">
+
+<div>
+        <strong><a href="/finder" style="text-decoration: none; color:black" >Home</a></strong><br />
+</div><br />
+<div style="font-size: 120%">
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if matches %}
+    <p>Found {{ matches|length }} match{{ matches|pluralize }}.</p>
+    <ul>
+        {% for match in matches %}
+        <li>
+            {{ match.website }}
+        </li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No sites matched your search criteria.</p></div>
+{% endif %}
+
+</body>

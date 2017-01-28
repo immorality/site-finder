@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html>
+<head>
+    <title>site-finder</title>
+</head>
+<body bgcolor=#add8e6>
+    {% block body_block %}
+    <br/>
+        <div style="text-align: center; ">
+            <h1>#site-finder</h1>
+        </div><br />
+
+    <div style="text-align: center;">
+    <form action="/finder/search/" method="get">
+        <label style="font-size: 120%">Type site or #tag here: </label>
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+        <p style="font-style: italic">example: https://www.facebook.com or #social</p>
+    </div><br />
+        <div style="margin-top: 25%">
+        <strong><a href="/finder/list" style="text-decoration: none; color:black" >All matches</a></strong><br />
+        <strong><a href="/admin" style="text-decoration: none; color: black">Add</a> </strong>
+     </div><br />
+    {% endblock %}
+
+</body>
+</html>
